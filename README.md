@@ -1,6 +1,7 @@
 # SQA-Steam-Clone
 Project for SQA CSCI 3060U
 
+```
 SQA-Steam-Clone/
 |──src/
 |   |────main/
@@ -32,4 +33,4 @@ SQA-Steam-Clone/
 |          |────Add credit verify
 |          |────Add credit account check
 |          |────Add credit amount check
-|
+```
