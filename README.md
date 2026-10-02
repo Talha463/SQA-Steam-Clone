@@ -5,7 +5,7 @@ Project for SQA CSCI 3060U
 SQA-Steam-Clone/
 |──src/
 |   |────main/
-|   |────Test/
+|   |────phase1_test/
 |          |────Read file
 |          |────Login requests username
 |          |────Read available games after login
