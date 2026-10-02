@@ -92,7 +92,8 @@ SQA-Steam-Clone/
 
 ## How will the test run and how the output will be stored and organized for reporting and comparison with later runs? 
 
-Each test case is stored in there own file, containing one complete input file and the expected output files for that. When a test is executed, the results are automatic stored in a separate data file. The tests will be executed in pytest. The output will just be what the output text file is. 
+Each test case is stored in their own file, containing one complete input file and the expected output files for that. When a test is executed, the results are automatically stored in a separate data file. The tests will be executed in pytest. The output will just be what the output text file is.
+
 
 
 
