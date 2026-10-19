@@ -13,3 +13,7 @@ int GameListing::getPrice() const {
 bool GameListing::isPurchasable() const {
 	return available;
 }
+
+bool GameListing::isValidName(std::string name) {
+	return (!name.empty() && name.size() <= MAX_NAME_LENGTH);
+}

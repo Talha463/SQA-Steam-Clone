@@ -2,20 +2,19 @@
 
 
 bool Session::login(User* user) {
-	if (isLoggedIn()) {
+	if (isLoggedIn() || user == nullptr) {
 		return false;
 	}
 	currentUser = user;
+	addedCredit.clear();
 	return true;
 }
 bool Session::logout() {
 	if (!isLoggedIn()) {
 		return false;
 	}
-
-	// Add transaction log
-
 	currentUser = nullptr;
+	addedCredit.clear();
 	return true;
 }
 bool Session::isLoggedIn() const {
@@ -24,13 +23,16 @@ bool Session::isLoggedIn() const {
 User* Session::getCurrentUser() const {
 	return currentUser;
 }
-int Session::creditAdded() const {
-	return addedCredit;
+int Session::creditAdded(std::string username) const {
+	auto entry = addedCredit.find(username);
+	if (entry == addedCredit.end()) {
+		return 0;
+	}
+	return entry->second;
 }
-void Session::recordCreditAddition(int amount) {
-	//create log
-	addedCredit += amount;
+void Session::recordCreditAddition(std::string username, int amount) {
+	addedCredit[username] += amount;
 }
-int Session::remainingCreditLimit() const {
-	return 100000 - addedCredit; //credit limit is $1000.00
+int Session::remainingCreditLimit(std::string username) const {
+	return CREDIT_LIMIT - creditAdded(username);
 }
