@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-
+// Game listing class with its respective data
 class GameListing {
 private:
     std::string name;

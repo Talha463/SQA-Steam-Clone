@@ -2,10 +2,11 @@
 #include "Format.h"
 #include <algorithm>
 
-
+// Implementation of the user class represnting individula user accounts and permissions.
 std::string User::getUsername() const {
 	return username;
 }
+// Getter Methods
 int User::getCredit() const {
 	return credit;
 }
@@ -24,7 +25,7 @@ std::string User::getTypeCode() const {
 		return "SS";
 	}
 	return "  ";
-}
+} // Adds credit and returns true or false if not added
 bool User::addCredit(int amount) {
 	if (amount < 0 || credit + amount > MAX_CREDIT) {
 		return false;
@@ -32,6 +33,7 @@ bool User::addCredit(int amount) {
 	credit += amount;
 	return true;
 }
+// Deducts a specific amount of credit from the users accounts
 bool User::deductCredit(int amount) {
 	if (amount <= credit) {
 		credit -= amount;
@@ -39,6 +41,8 @@ bool User::deductCredit(int amount) {
 	}
 	return false;
 }
+
+// Check functions to validate permissions
 bool User::canBuy() const {
 	return (level == Permissions::ADMIN || level == Permissions::FULL_STANDARD || level == Permissions::BUY_STANDARD);
 }

@@ -5,26 +5,36 @@
 #include <sstream>
 
 
+/* This is a implementation of string manipulation and formatting functions */
+
+// Removes leadding and trailing whitespaces from a inputted string
 std::string Format::trim(std::string text) {
 	const std::string whitespace = " \t\r\n";
 	size_t start = text.find_first_not_of(whitespace);
+	// if string contains only whitespace, return the string
 	if (start == std::string::npos) {
 		return "";
 	}
 	size_t end = text.find_last_not_of(whitespace);
 	return text.substr(start, end - start + 1);
 }
+
+// converts all characters in a string to lowercase.
 std::string Format::toLower(std::string text) {
 	std::transform(text.begin(), text.end(), text.begin(),
 		[](unsigned char c) { return static_cast<char>(std::tolower(c)); });
 	return text;
 }
+
+// Pads a string on the right with a specific width.
 std::string Format::padRight(std::string text, int width) {
 	if (static_cast<int>(text.size()) >= width) {
 		return text.substr(0, width);
 	}
 	return text + std::string(width - text.size(), ' ');
 }
+
+// Formats an integer amount of money into a string with leading 0's
 std::string Format::formatMoney(int cents, int width) {
 	std::ostringstream money;
 	money << (cents / 100) << '.' << std::setw(2) << std::setfill('0') << (cents % 100);
@@ -33,6 +43,8 @@ std::string Format::formatMoney(int cents, int width) {
 	padded << std::setw(width) << std::setfill('0') << money.str();
 	return padded.str();
 }
+
+// Parses a string into a integer representing cents. Takes in the string to parse (e.g., "23.42"). Returns true or false depending if the parse was succesful or not.
 bool Format::parseMoney(std::string text, int& cents) {
 	std::string value = trim(text);
 	if (!value.empty() && value[0] == '$') {

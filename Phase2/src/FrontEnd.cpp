@@ -1,7 +1,10 @@
 #include "FrontEnd.h"
 #include "Format.h"
 
+// Implementation of the CL interdace for the application
 
+
+// Starts the main application loop, reading and proccesing user input
 void FrontEnd::run() {
 	out << "Steam Clone - type 'help' for a list of transactions\n";
 	std::string line;
@@ -13,7 +16,8 @@ void FrontEnd::run() {
 		processTransaction(code);
 	}
 }
-
+// Prompts a user with a messages and reads their response
+// Returns true if input was succesfully read, false if the stream ended or failed.
 bool FrontEnd::prompt(std::string message, std::string& response) {
 	out << message << '\n';
 	if (!std::getline(in, response)) {
@@ -23,7 +27,7 @@ bool FrontEnd::prompt(std::string message, std::string& response) {
 	response = Format::trim(response);
 	return true;
 }
-
+//  Processes a given transaction code and routes it to the appropriate handler.
 void FrontEnd::processTransaction(std::string code) {
 	if (code == "help") {
 		handleHelp();
@@ -68,7 +72,7 @@ void FrontEnd::processTransaction(std::string code) {
 		out << "Error: unrecognized transaction\n";
 	}
 }
-
+ // Displays the list of available transactions based on the user's role and login status.
 void FrontEnd::handleHelp() {
 	out << "Available transactions:\n";
 	if (!session.isLoggedIn()) {
@@ -93,7 +97,7 @@ void FrontEnd::handleHelp() {
 	out << "  addcredit  - add credit to " << (current->isAdmin() ? "an account" : "your account") << '\n';
 	out << "  help       - list available transactions\n";
 }
-
+ // Handles the user login process by validating credentials and loading data.
 void FrontEnd::handleLogin() {
 	if (!accounts.load(accountsFile)) {
 		out << "Error: could not read the user accounts file\n";
@@ -119,7 +123,7 @@ void FrontEnd::handleLogin() {
 	log.clear();
 	out << "Login successful\n";
 }
-
+// handles logout function and writes session logs to file
 void FrontEnd::handleLogout() {
 	log.recordEndOfSession(*session.getCurrentUser());
 	if (!log.writeToFile(transactionFile)) {
@@ -129,7 +133,7 @@ void FrontEnd::handleLogout() {
 	session.logout();
 	out << "Logout successful\n";
 }
-
+	// handles creation of new accounts (admins only)
 void FrontEnd::handleCreate() {
 	if (!session.getCurrentUser()->isAdmin()) {
 		out << "Error: only admins can create users\n";
@@ -163,7 +167,7 @@ void FrontEnd::handleCreate() {
 	log.recordCreate(*created);
 	out << "User created successfully\n";
 }
-
+// Handles deletion of accounts ( Admins only aswell)
 void FrontEnd::handleDelete() {
 	if (!session.getCurrentUser()->isAdmin()) {
 		out << "Error: only admins can delete users\n";
@@ -171,7 +175,7 @@ void FrontEnd::handleDelete() {
 	}
 	//TODO: cleanup associated needs to be completed
 }
-
+// Handles sellig of games and putting up listings
 void FrontEnd::handleSell() {
 	User* seller = session.getCurrentUser();
 	if (!seller->canSell()) {
@@ -207,7 +211,7 @@ void FrontEnd::handleSell() {
 	log.recordSell(game);
 	out << "Game listed successfully\n";
 }
-
+// handles purchasing a game from a seller
 void FrontEnd::handleBuy() {
 	User* buyer = session.getCurrentUser();
 	if (!buyer->canBuy()) {
@@ -261,7 +265,7 @@ void FrontEnd::handleBuy() {
 	log.recordBuy(*game, *buyer);
 	out << "Game purchased successfully\n";
 }
-
+// Handles giving out refunds (Admin only)
 void FrontEnd::handleRefund() {
 	if (!session.getCurrentUser()->isAdmin()) {
 		out << "Error: only admins can issue refunds\n";
@@ -269,7 +273,7 @@ void FrontEnd::handleRefund() {
 	}
 	//TODO: need to complete refund
 }
-
+// handles adding crediot to a user account
 void FrontEnd::handleAddCredit() {
 	User* current = session.getCurrentUser();
 
@@ -295,7 +299,7 @@ void FrontEnd::handleAddCredit() {
 			return;
 		}
 	}
-
+		// verify session
 	if (amount > session.remainingCreditLimit(target->getUsername())) {
 		out << "Error: a maximum of $1000.00 can be added to an account per session\n";
 		return;

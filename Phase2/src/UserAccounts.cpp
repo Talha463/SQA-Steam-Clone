@@ -31,6 +31,7 @@ bool UserAccounts::load(std::string filename) {
 	}
 	return true;
 }
+// Finds and returns a pointer to a user by their username.
 User* UserAccounts::findUser(std::string username) const {
 	for (const auto& user : users) {
 		if (user->getUsername() == username) {
@@ -39,9 +40,11 @@ User* UserAccounts::findUser(std::string username) const {
 	}
 	return nullptr;
 }
+// Checks if a user with the specific username exists
 bool UserAccounts::exists(std::string username) const {
 	return (findUser(username) != nullptr);
 }
+// adds a new user account to the collection with specified permissions and credits
 User* UserAccounts::addUser(std::string username, Permissions permissions, int credit) {
 	users.push_back(std::make_unique<User>(username, permissions, credit));
 	return users.back().get();
