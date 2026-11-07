@@ -1,0 +1,7 @@
+Enter new username:
+Username accepted
+Enter new password:
+Password Accepted
+Account created successfully 
+Yes to sign out
+Signed out successfully

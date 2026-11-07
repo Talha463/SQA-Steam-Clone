@@ -1,0 +1,5 @@
+Enter username
+Login succesful
+Enter game:
+Enter price:
+Game purchased

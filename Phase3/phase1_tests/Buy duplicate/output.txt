@@ -1,0 +1,6 @@
+Enter username:
+Login succesful
+Enter game:
+Enter price:
+Enter seller:
+Error: game already in library

@@ -1,0 +1,4 @@
+Enter username:
+Login succesfull
+Enter credit amount:
+Error: credit amount exceeds session limit

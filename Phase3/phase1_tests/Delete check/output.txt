@@ -1,0 +1,16 @@
+Enter username:
+Login succesful
+Error: Must be admin to delete
+
+Enter username:
+Login succesful
+Enter user
+Are you sure?
+
+
+Enter username:
+Login succesful
+Enter user
+Error: cannot delete yourself
+
+

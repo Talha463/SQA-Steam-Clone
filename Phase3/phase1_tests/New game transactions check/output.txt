@@ -1,0 +1,8 @@
+Enter username:
+Login Succesful
+Enter game name:
+Enter price for game:
+Game listed successfully 
+Please enter game name:
+Error: please create new session to purchase 
+Log out successful

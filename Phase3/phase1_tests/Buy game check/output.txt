@@ -1,0 +1,14 @@
+Enter username:
+Login succesful
+Enter game:
+Enter price:
+Enter seller:
+Game purchased successfully
+
+Enter username:
+Login succesful
+Enter game:
+Enter price:
+Enter seller:
+Error: insufficient  funds
+

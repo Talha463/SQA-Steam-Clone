@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build front end (all source files)",
+            "command": "g++",
+            "args": [
+                "-std=c++17", "-g",
+                "src/main.cpp", "src/FrontEnd.cpp", "src/Format.cpp",
+                "src/GameCatalog.cpp", "src/GameListing.cpp", "src/Session.cpp",
+                "src/TransactionLog.cpp", "src/User.cpp", "src/UserAccounts.cpp",
+                "-o", "steam_clone"
+            ],
+            "options": { "cwd": "${workspaceFolder}/Phase2" },
+            "problemMatcher": ["$gcc"],
+            "group": { "kind": "build", "isDefault": true },
+            "detail": "Compiles every .cpp file (not just the open one)."
+        }
+    ]
+}

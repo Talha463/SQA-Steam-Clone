@@ -1,0 +1,4 @@
+Enter username:
+Login succesful:
+Enter credit amount:
+Credit added successfully

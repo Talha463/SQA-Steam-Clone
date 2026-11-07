@@ -1,0 +1,4 @@
+Enter username:
+Login succesful
+Which game would you like to see:
+All games are displayed

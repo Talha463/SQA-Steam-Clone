@@ -1,0 +1,4 @@
+Unsuccessful. Please login first
+Enter Username:
+Login succesful
+Enter game:

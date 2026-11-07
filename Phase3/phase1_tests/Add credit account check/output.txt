@@ -1,0 +1,10 @@
+Enter username:
+Login succesful
+Enter user:
+Enter credit amount:
+Credit successfully given
+
+Enter username:
+Login succesful
+Enter user:
+Error: User does not exist

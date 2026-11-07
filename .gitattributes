@@ -1,0 +1,4 @@
+# Keep Unix line endings so the .sh scripts and test files work on Windows too
+*.sh                    text eol=lf
+Phase3/phase1_tests/**  text eol=lf
+Phase3/test_data/**     text eol=lf

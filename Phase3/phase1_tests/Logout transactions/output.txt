@@ -1,0 +1,4 @@
+Enter username:
+Login succesful
+Logout successful
+Error: cannot purchase while logged out, please login

@@ -1,0 +1,9 @@
+Enter username:
+Login succesful
+Error: only admins can delete accounts
+
+Enter username 
+Login succesful
+Please enter user:
+Are you sure?
+Delete succesful

@@ -1,0 +1,3 @@
+Please enter new username:
+Please enter new password:
+Account created successfully

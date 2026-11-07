@@ -1,0 +1,10 @@
+Enter Username:
+Login successful
+Please enter game name:
+Please enter listing price:
+Listing successfully saved
+
+Enter Username:
+Login successful
+Please enter game name:
+Error game must be unique

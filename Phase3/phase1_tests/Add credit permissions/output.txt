@@ -1,0 +1,9 @@
+Enter username:
+Login succesful
+Error: only admins can add credit
+
+
+Enter username:
+Login succesful
+Enter credit amount:
+Credit added succesfully

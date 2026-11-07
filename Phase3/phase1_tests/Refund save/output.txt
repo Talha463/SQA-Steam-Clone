@@ -1,0 +1,7 @@
+Enter a username:
+Login successful
+Please enter the game:
+Please enter credit amount:
+Please enter seller:
+Refund completed successfully
+// information is saved in user profile

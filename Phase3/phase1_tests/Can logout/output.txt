@@ -1,0 +1,4 @@
+Error: Can not logout when not logged in
+Enter username:
+Login succesful
+Logout successful

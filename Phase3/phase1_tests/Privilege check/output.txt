@@ -1,0 +1,9 @@
+Enter username:
+Login succesful
+Enter user to ban:
+Unsuccessful. You do not have admin privileges 
+
+Enter username:
+Login succesful
+Enter user to ban:
+Ban succesful

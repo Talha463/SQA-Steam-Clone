@@ -1,0 +1,4 @@
+Enter username:
+Login Succesful
+Please enter credit amount:
+Error: credit can not exceed 999,999

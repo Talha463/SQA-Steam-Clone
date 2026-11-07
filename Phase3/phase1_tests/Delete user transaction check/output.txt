@@ -1,0 +1,10 @@
+Enter username:
+Login succesful
+User deleted
+Error: user not found
+
+Enter username:
+Login successful
+Enter user:
+Do you confirm?
+User deleted successfully
