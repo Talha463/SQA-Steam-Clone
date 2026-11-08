@@ -1,10 +1,8 @@
-Enter username:
-Login succesful
-User deleted
-Error: user not found
-
+Steam Clone - type 'help' for a list of transactions
 Enter username:
 Login successful
-Enter user:
-Do you confirm?
+Enter username to delete:
+Error: user does not exist
+Enter username to delete:
 User deleted successfully
+Logout successful

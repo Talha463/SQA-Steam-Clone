@@ -1,9 +1,12 @@
+Steam Clone - type 'help' for a list of transactions
 Enter username:
-Login succesful
-Error: only admins can add credit
-
-
-Enter username:
-Login succesful
+Login successful
 Enter credit amount:
-Credit added succesfully
+Credit added successfully
+Logout successful
+Enter username:
+Login successful
+Enter credit amount:
+Enter username:
+Credit added successfully
+Logout successful

@@ -1,6 +1,6 @@
-Login 
+login
 Username123
-Buy
+buy
 Halo
-19.99
 Microsoft
+logout

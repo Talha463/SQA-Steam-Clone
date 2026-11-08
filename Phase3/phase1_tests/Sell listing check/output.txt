@@ -1,10 +1,12 @@
-Enter Username:
+Steam Clone - type 'help' for a list of transactions
+Enter username:
 Login successful
-Please enter game name:
-Please enter listing price:
-Listing successfully saved
-
-Enter Username:
+Enter game name:
+Enter price:
+Game listed successfully
+Logout successful
+Enter username:
 Login successful
-Please enter game name:
-Error game must be unique
+Enter game name:
+Error: a game with that name already exists
+Logout successful

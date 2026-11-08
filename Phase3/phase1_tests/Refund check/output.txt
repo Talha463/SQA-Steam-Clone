@@ -1,6 +1,12 @@
+Steam Clone - type 'help' for a list of transactions
 Enter username:
-Login Succesful
-Enter refund game:
-Enter credit amount:
-Enter seller name:
-$25 has been credited back to your account 
+Login successful
+Error: only admins can issue refunds
+Logout successful
+Enter username:
+Login successful
+Enter buyer username:
+Enter seller username:
+Enter refund amount:
+Error: seller has insufficient credit
+Logout successful

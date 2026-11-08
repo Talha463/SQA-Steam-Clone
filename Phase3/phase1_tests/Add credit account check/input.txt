@@ -1,10 +1,12 @@
-Login
+login
 Admin01
-Add credit to user
-Username123
+addcredit
 900
-
-Login
+Username123
+logout
+login
 Admin01
-Add credit to user
+addcredit
+900
 Username321
+logout

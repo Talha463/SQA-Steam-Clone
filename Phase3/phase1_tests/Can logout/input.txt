@@ -1,4 +1,4 @@
-Logout
-Login
+logout
+login
 Username123
-Logout
+logout

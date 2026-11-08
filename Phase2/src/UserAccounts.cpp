@@ -49,3 +49,34 @@ User* UserAccounts::addUser(std::string username, Permissions permissions, int c
 	users.push_back(std::make_unique<User>(username, permissions, credit));
 	return users.back().get();
 }
+
+// Loads the games collection file and adds each owned game to its owner's collection
+bool UserAccounts::loadCollection(std::string filename) {
+	std::ifstream file(filename);
+	if (!file) {
+		return false;
+	}
+
+	const size_t gameStart = Format::USERNAME_WIDTH + 1;
+	std::string line;
+	while (std::getline(file, line)) {
+		std::string owner = Format::trim(line.substr(0, Format::USERNAME_WIDTH));
+		if (owner == "END") {
+			break;
+		}
+		if (line.size() <= gameStart) {
+			continue;	//Skip malformed lines.
+		}
+		std::string game = Format::trim(line.substr(gameStart, Format::GAME_NAME_WIDTH));
+		User* user = findUser(owner);
+		if (user != nullptr && !game.empty() && !user->ownsGame(game)) {
+			user->addGameToCollection(game);
+		}
+	}
+	return true;
+}
+
+// returns every user account
+const std::vector<std::unique_ptr<User>>& UserAccounts::getUsers() const {
+	return users;
+}

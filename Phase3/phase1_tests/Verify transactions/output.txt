@@ -1,4 +1,8 @@
-Unsuccessful. Please login first
-Enter Username:
-Login succesful
-Enter game:
+Steam Clone - type 'help' for a list of transactions
+Error: please login first
+Enter username:
+Login successful
+Enter game name:
+Enter seller username:
+Game purchased successfully
+Logout successful

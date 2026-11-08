@@ -1,9 +1,11 @@
+Steam Clone - type 'help' for a list of transactions
 Enter username:
-Login succesful
-Enter user to ban:
-Unsuccessful. You do not have admin privileges 
-
+Login successful
+Error: only admins can create users
+Logout successful
 Enter username:
-Login succesful
-Enter user to ban:
-Ban succesful
+Login successful
+Enter new username:
+Enter user type (admin, full-standard, buy-standard, sell-standard):
+User created successfully
+Logout successful

@@ -1,6 +1,7 @@
+Steam Clone - type 'help' for a list of transactions
 Enter username:
-Login succesful
-Enter game:
-Enter price:
-Enter seller:
-Error: game already in library
+Login successful
+Enter game name:
+Enter seller username:
+Error: game is already in your collection
+Logout successful

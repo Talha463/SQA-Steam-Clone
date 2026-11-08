@@ -1,6 +1,11 @@
-Login
+login
 Username123
-Refund
-Halo
-$25
+refund
+logout
+login
+Admin01
+refund
+BuyerOnly
 Microsoft
+25
+logout

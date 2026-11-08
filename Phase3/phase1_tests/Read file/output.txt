@@ -1,2 +1,6 @@
-File successfully read!
-//Displays user list 
+Steam Clone - type 'help' for a list of transactions
+Enter username:
+Error: user does not exist
+Enter username:
+Login successful
+Logout successful

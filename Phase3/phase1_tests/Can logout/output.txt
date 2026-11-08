@@ -1,4 +1,5 @@
-Error: Can not logout when not logged in
+Steam Clone - type 'help' for a list of transactions
+Error: please login first
 Enter username:
-Login succesful
+Login successful
 Logout successful

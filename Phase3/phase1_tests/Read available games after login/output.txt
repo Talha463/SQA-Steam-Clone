@@ -1,4 +1,10 @@
+Steam Clone - type 'help' for a list of transactions
 Enter username:
-Login succesful
-Which game would you like to see:
-All games are displayed
+Login successful
+Enter search query:
+Games:
+  Halo - seller: Microsoft - $19.99
+  Portal - seller: SellerOnly - $9.99
+Users:
+  Username123
+Logout successful

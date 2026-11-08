@@ -3,4 +3,5 @@ Username123     FS 000025.00
 Microsoft       SS 000000.00
 BuyerOnly       BS 000050.00
 SellerOnly      SS 000000.00
+RichUser        FS 999500.00
 END            

@@ -1,8 +1,11 @@
-Login
+login
 Username1
-Add credit
-
-Login 
-Admin01
-Add credit
+addcredit
 100
+logout
+login
+Admin01
+addcredit
+100
+Username1
+logout

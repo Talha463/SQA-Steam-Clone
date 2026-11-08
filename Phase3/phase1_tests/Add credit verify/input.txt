@@ -1,4 +1,5 @@
-Login
+login
 Username123
-Add credit
+addcredit
 100
+logout

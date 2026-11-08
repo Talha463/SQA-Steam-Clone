@@ -1,2 +1,4 @@
-Please enter your username:
+Steam Clone - type 'help' for a list of transactions
+Enter username:
 Login successful
+Logout successful

@@ -8,7 +8,7 @@ Run all commands from a terminal (Git Bash on Windows, or any Linux/macOS shell)
 | `phase1_tests/<test name>/input.txt` | Lines typed into the program (stdin) |
 | `phase1_tests/<test name>/output.txt` | Expected terminal output |
 | `phase1_tests/<test name>/expected.atf` | Expected daily transaction file (optional; checked only if present) |
-| `test_data/` | `currentaccounts.txt` and `availablegames.txt` used by every test |
+| `test_data/` | `currentaccounts.txt`, `availablegames.txt` and `gamescollection.txt` used by every test |
 | `test_outputs/<test name>/` | Created by the scripts: `actual.out`, `actual.atf`, `diff_*.txt` |
 | `run_history.txt` | One line per test-suite run (pass/fail counts and failed tests) |
 
@@ -20,7 +20,7 @@ Compiles `../Phase2/src/*.cpp` into `../Phase2/steam_clone` (`.exe` on Windows).
 
 ## Run the program by hand
 ```
-../Phase2/steam_clone test_data/currentaccounts.txt test_data/availablegames.txt transout.atf
+../Phase2/steam_clone test_data/currentaccounts.txt test_data/availablegames.txt test_data/gamescollection.txt transout.atf
 ```
 Input is read from the keyboard (stdin), the log is printed to the terminal, and the daily transaction file is appended to `transout.atf` when the user types `logout`.
 

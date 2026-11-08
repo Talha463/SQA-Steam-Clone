@@ -1,4 +1,10 @@
-Enter Username:
-Login successfully
-Game added to cart
-Game purchase succesfully
+Steam Clone - type 'help' for a list of transactions
+Enter username:
+Login successful
+Enter game name:
+Enter seller username:
+Game purchased successfully
+Enter game name:
+Enter seller username:
+Game purchased successfully
+Logout successful

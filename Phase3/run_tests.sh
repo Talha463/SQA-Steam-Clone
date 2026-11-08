@@ -30,13 +30,14 @@ TESTS_DIR="${TESTS_DIR:-phase1_tests}"                 # one sub-folder per test
 RESULTS_DIR="${RESULTS_DIR:-test_outputs}"             # actual results go here
 ACCOUNTS="${ACCOUNTS:-test_data/currentaccounts.txt}"  # current user accounts
 GAMES="${GAMES:-test_data/availablegames.txt}"         # available games
+COLLECTION="${COLLECTION:-test_data/gamescollection.txt}"  # games each user owns
 
 # Stop early with a clear message if something is missing
 if [ -z "$PROGRAM" ] || [ ! -x "$PROGRAM" ]; then
     echo "ERROR: program not found. Build it first with ./build.sh"
     exit 1
 fi
-for needed in "$TESTS_DIR" "$ACCOUNTS" "$GAMES"; do
+for needed in "$TESTS_DIR" "$ACCOUNTS" "$GAMES" "$COLLECTION"; do
     if [ ! -e "$needed" ]; then
         echo "ERROR: '$needed' not found."
         exit 1
@@ -58,7 +59,7 @@ for test_path in "$TESTS_DIR"/*/; do
     # The program APPENDS to its transaction file, so each test starts with
     # no file at all. stdin <- input.txt, stdout -> actual.out
     rm -f "$RESULTS_DIR/$name/actual.atf"
-    "$PROGRAM" "$ACCOUNTS" "$GAMES" "$RESULTS_DIR/$name/actual.atf" \
+    "$PROGRAM" "$ACCOUNTS" "$GAMES" "$COLLECTION" "$RESULTS_DIR/$name/actual.atf" \
         < "$test_path/input.txt" > "$RESULTS_DIR/$name/actual.out" 2>&1
 
     # A test with no transactions leaves no file; create an empty one so the

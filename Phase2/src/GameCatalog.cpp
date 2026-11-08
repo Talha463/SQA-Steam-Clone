@@ -61,3 +61,8 @@ bool GameCatalog::exists(std::string name) const {
 void GameCatalog::addGame(const GameListing& game) {
 	games.push_back(game);
 }
+
+// returns every listing in the catalog
+const std::vector<GameListing>& GameCatalog::getGames() const {
+	return games;
+}

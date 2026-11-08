@@ -1,4 +1,7 @@
-Create
+login
+Admin01
+create
+ThisNameIsTooLong
+create
 Username123
-Password
-Yes
+logout

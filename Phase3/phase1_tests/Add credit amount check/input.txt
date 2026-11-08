@@ -1,4 +1,6 @@
-Login
+login
 Admin01
-Add credit
+addcredit
 2000
+Username123
+logout

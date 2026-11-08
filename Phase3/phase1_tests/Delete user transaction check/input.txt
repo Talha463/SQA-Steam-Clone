@@ -1,9 +1,7 @@
-Login
-Username123
-Delete account
-Login 
-
-Login
+login
 Admin01
-Delete
-Yes
+delete
+Username321
+delete
+BuyerOnly
+logout

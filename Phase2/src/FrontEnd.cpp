@@ -68,6 +68,9 @@ void FrontEnd::processTransaction(std::string code) {
 	else if (code == "addcredit" || code == "add credit") {
 		handleAddCredit();
 	}
+	else if (code == "search") {
+		handleSearch();
+	}
 	else {
 		out << "Error: unrecognized transaction\n";
 	}
@@ -95,12 +98,17 @@ void FrontEnd::handleHelp() {
 		out << "  buy        - purchase a game\n";
 	}
 	out << "  addcredit  - add credit to " << (current->isAdmin() ? "an account" : "your account") << '\n';
+	out << "  search     - find games and users by name\n";
 	out << "  help       - list available transactions\n";
 }
  // Handles the user login process by validating credentials and loading data.
 void FrontEnd::handleLogin() {
 	if (!accounts.load(accountsFile)) {
 		out << "Error: could not read the user accounts file\n";
+		return;
+	}
+	if (!accounts.loadCollection(collectionFile)) {
+		out << "Error: could not read the games collection file\n";
 		return;
 	}
 
@@ -173,7 +181,23 @@ void FrontEnd::handleDelete() {
 		out << "Error: only admins can delete users\n";
 		return;
 	}
-	//TODO: cleanup associated needs to be completed
+
+	std::string username;
+	if (!prompt("Enter username to delete:", username)) {
+		return;
+	}
+	User* target = accounts.findUser(username);
+	if (target == nullptr) {
+		out << "Error: user does not exist\n";
+		return;
+	}
+	if (target == session.getCurrentUser()) {
+		out << "Error: you cannot delete your own account\n";
+		return;
+	}
+
+	log.recordDelete(*target);
+	out << "User deleted successfully\n";
 }
 // Handles sellig of games and putting up listings
 void FrontEnd::handleSell() {
@@ -271,7 +295,45 @@ void FrontEnd::handleRefund() {
 		out << "Error: only admins can issue refunds\n";
 		return;
 	}
-	//TODO: need to complete refund
+
+	std::string buyerName, sellerName, amountText;
+	if (!prompt("Enter buyer username:", buyerName)) {
+		return;
+	}
+	User* buyer = accounts.findUser(buyerName);
+	if (buyer == nullptr) {
+		out << "Error: buyer does not exist\n";
+		return;
+	}
+	if (!prompt("Enter seller username:", sellerName)) {
+		return;
+	}
+	User* seller = accounts.findUser(sellerName);
+	if (seller == nullptr) {
+		out << "Error: seller does not exist\n";
+		return;
+	}
+	if (!prompt("Enter refund amount:", amountText)) {
+		return;
+	}
+	int amount = 0;
+	if (!Format::parseMoney(amountText, amount) || amount <= 0) {
+		out << "Error: invalid refund amount\n";
+		return;
+	}
+
+	if (!seller->deductCredit(amount)) {
+		out << "Error: seller has insufficient credit\n";
+		return;
+	}
+	if (!buyer->addCredit(amount)) {
+		seller->addCredit(amount);	//Undo the deduction
+		out << "Error: buyer's credit would exceed the maximum\n";
+		return;
+	}
+
+	log.recordRefund(*buyer, *seller, amount);
+	out << "Refund processed successfully\n";
 }
 // handles adding crediot to a user account
 void FrontEnd::handleAddCredit() {
@@ -312,4 +374,54 @@ void FrontEnd::handleAddCredit() {
 	session.recordCreditAddition(target->getUsername(), amount);
 	log.recordAddCredit(*target, amount);
 	out << "Credit added successfully\n";
+}
+
+// Handles searching for games and users whose names contain the query (case-insensitive).
+// Non-admins are not shown administrators who are not selling games.
+void FrontEnd::handleSearch() {
+	User* current = session.getCurrentUser();
+
+	std::string query;
+	if (!prompt("Enter search query:", query)) {
+		return;
+	}
+	std::string needle = Format::toLower(query);
+
+	out << "Games:\n";
+	bool found = false;
+	for (const auto& game : catalog.getGames()) {
+		if (Format::toLower(game.getName()).find(needle) != std::string::npos) {
+			out << "  " << game.getName() << " - seller: " << game.getSellerUsername()
+				<< " - $" << Format::formatMoney(game.getPrice(), 0) << '\n';
+			found = true;
+		}
+	}
+	if (!found) {
+		out << "  (none)\n";
+	}
+
+	out << "Users:\n";
+	found = false;
+	for (const auto& user : accounts.getUsers()) {
+		if (Format::toLower(user->getUsername()).find(needle) == std::string::npos) {
+			continue;
+		}
+		if (!current->isAdmin() && user->isAdmin()) {
+			bool selling = false;
+			for (const auto& game : catalog.getGames()) {
+				if (game.getSellerUsername() == user->getUsername()) {
+					selling = true;
+					break;
+				}
+			}
+			if (!selling) {
+				continue;	//Hide admins who are not selling games
+			}
+		}
+		out << "  " << user->getUsername() << '\n';
+		found = true;
+	}
+	if (!found) {
+		out << "  (none)\n";
+	}
 }
