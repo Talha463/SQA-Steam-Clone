@@ -1,5 +1,7 @@
-Enter username
-Login succesful
-Enter game:
-Enter price:
-Game purchased
+Steam Clone - type 'help' for a list of transactions
+Enter username:
+Login successful
+Enter game name:
+Enter seller username:
+Game purchased successfully
+Logout successful

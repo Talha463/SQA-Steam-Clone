@@ -1,4 +1,9 @@
-Login
-Username123
-Add game to cart
-Buy
+login
+BuyerOnly
+buy
+Portal
+SellerOnly
+buy
+Halo
+Microsoft
+logout

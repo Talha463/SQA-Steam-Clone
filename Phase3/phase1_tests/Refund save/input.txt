@@ -1,6 +1,10 @@
-Login
-Username123
-Refund
-Halo
-$25
+login
+Admin01
+addcredit
+100
 Microsoft
+refund
+BuyerOnly
+Microsoft
+19.99
+logout

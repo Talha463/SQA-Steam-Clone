@@ -1,7 +1,11 @@
-Enter a username:
+Steam Clone - type 'help' for a list of transactions
+Enter username:
 Login successful
-Please enter the game:
-Please enter credit amount:
-Please enter seller:
-Refund completed successfully
-// information is saved in user profile
+Enter credit amount:
+Enter username:
+Credit added successfully
+Enter buyer username:
+Enter seller username:
+Enter refund amount:
+Refund processed successfully
+Logout successful

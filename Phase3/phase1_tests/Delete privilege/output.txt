@@ -1,9 +1,10 @@
+Steam Clone - type 'help' for a list of transactions
 Enter username:
-Login succesful
-Error: only admins can delete accounts
-
-Enter username 
-Login succesful
-Please enter user:
-Are you sure?
-Delete succesful
+Login successful
+Error: only admins can delete users
+Logout successful
+Enter username:
+Login successful
+Enter username to delete:
+User deleted successfully
+Logout successful

@@ -1,4 +1,4 @@
-Login
+login
 Username123
-Logout
-Buy
+logout
+buy

@@ -1,5 +1,7 @@
-Buy
-Login
+buy
+login
 Username123
-Buy
-Halo
+buy
+Portal
+SellerOnly
+logout

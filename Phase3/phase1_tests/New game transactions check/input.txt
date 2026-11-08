@@ -1,8 +1,9 @@
-Login
+login
 Username123
-Sell
+sell
 Game1
 19.99
-Buy
+buy
 Game1
-Logout
+Username123
+logout

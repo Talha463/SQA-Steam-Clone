@@ -1,3 +1,5 @@
+Steam Clone - type 'help' for a list of transactions
 Enter username:
 Login successful
-Error: Please logout to login again
+Error: already logged in, please logout first
+Logout successful

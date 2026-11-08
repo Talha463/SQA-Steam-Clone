@@ -1,15 +1,12 @@
+Steam Clone - type 'help' for a list of transactions
 Enter username:
 Login successful
-Please enter game:
-Please enter credit amount:
-Please enter seller:
-Refund complete.
-
+Enter buyer username:
+Error: buyer does not exist
+Logout successful
 Enter username:
 Login successful
-Please enter game:
-Please enter credit amount:
-Please enter seller:
+Enter buyer username:
+Enter seller username:
 Error: seller does not exist
-
-
+Logout successful

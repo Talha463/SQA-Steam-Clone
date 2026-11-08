@@ -1,8 +1,10 @@
+Steam Clone - type 'help' for a list of transactions
 Enter username:
-Login Succesful
+Login successful
 Enter game name:
-Enter price for game:
-Game listed successfully 
-Please enter game name:
-Error: please create new session to purchase 
-Log out successful
+Enter price:
+Game listed successfully
+Enter game name:
+Enter seller username:
+Error: this game cannot be bought until the next session
+Logout successful

@@ -1,7 +1,8 @@
+Steam Clone - type 'help' for a list of transactions
+Enter username:
+Login successful
 Enter new username:
-Username accepted
-Enter new password:
-Password Accepted
-Account created successfully 
-Yes to sign out
-Signed out successfully
+Error: username must be between 1 and 15 characters
+Enter new username:
+Error: username already exists
+Logout successful

@@ -1,3 +1,7 @@
-Please enter new username:
-Please enter new password:
-Account created successfully
+Steam Clone - type 'help' for a list of transactions
+Enter username:
+Login successful
+Enter new username:
+Enter user type (admin, full-standard, buy-standard, sell-standard):
+User created successfully
+Logout successful

@@ -1,4 +1,5 @@
+Steam Clone - type 'help' for a list of transactions
 Enter username:
-Login succesful
+Login successful
 Logout successful
-Error: cannot purchase while logged out, please login
+Error: please login first

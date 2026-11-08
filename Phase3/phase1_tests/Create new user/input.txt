@@ -1,3 +1,6 @@
-Create
-Username123
-Password
+login
+Admin01
+create
+NewUser01
+full-standard
+logout
