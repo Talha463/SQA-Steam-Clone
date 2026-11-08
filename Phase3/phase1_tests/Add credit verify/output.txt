@@ -1,4 +1,6 @@
+Steam Clone - type 'help' for a list of transactions
 Enter username:
-Login succesful:
+Login successful
 Enter credit amount:
 Credit added successfully
+Logout successful

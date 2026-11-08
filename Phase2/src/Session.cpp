@@ -1,6 +1,6 @@
 #include "Session.h"
 
-// Logs in a user session
+// Logs in a user if no one is currently logged in and the user pointer is valid.
 bool Session::login(User* user) {
 	if (isLoggedIn() || user == nullptr) {
 		return false;
@@ -9,7 +9,7 @@ bool Session::login(User* user) {
 	addedCredit.clear();
 	return true;
 }
-// Logs out the current user and clears session credit tracking
+// Logs out the current user if a user is logged in.
 bool Session::logout() {
 	if (!isLoggedIn()) {
 		return false;
@@ -18,15 +18,12 @@ bool Session::logout() {
 	addedCredit.clear();
 	return true;
 }
-// Validates  whether a user is currently logged into a session
 bool Session::isLoggedIn() const {
 	return (currentUser != nullptr);
 }
-// Returns the current user
 User* Session::getCurrentUser() const {
 	return currentUser;
 }
-// Gets the total amount of credit added to a users's account during the current session
 int Session::creditAdded(std::string username) const {
 	auto entry = addedCredit.find(username);
 	if (entry == addedCredit.end()) {

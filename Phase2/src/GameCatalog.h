@@ -13,4 +13,5 @@ public:
 	GameListing* findGame(std::string name);
 	bool exists(std::string name) const;
 	void addGame(const GameListing& game);
+	const std::vector<GameListing>& getGames() const;	//All listings, used by search
 };

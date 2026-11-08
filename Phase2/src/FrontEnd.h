@@ -13,6 +13,7 @@ private:
 	std::ostream& out;
 	std::string accountsFile;
 	std::string gamesFile;
+	std::string collectionFile;
 	std::string transactionFile;
 
 	UserAccounts accounts;
@@ -33,10 +34,11 @@ private:
 	void handleBuy();
 	void handleRefund();
 	void handleAddCredit();
+	void handleSearch();
 
 public:
-	FrontEnd(std::istream& in, std::ostream& out, std::string accountsFile, std::string gamesFile, std::string transactionFile)
-		: in(in), out(out), accountsFile(accountsFile), gamesFile(gamesFile), transactionFile(transactionFile) { }
+	FrontEnd(std::istream& in, std::ostream& out, std::string accountsFile, std::string gamesFile, std::string collectionFile, std::string transactionFile)
+		: in(in), out(out), accountsFile(accountsFile), gamesFile(gamesFile), collectionFile(collectionFile), transactionFile(transactionFile) { }
 
 	void run();
 };
